@@ -130,7 +130,7 @@ class Sentry_User
 
 				$usergroups = DB::select('group_id')
 					->from($this->table_usergroups)
-					->where($this->table_usergroups.'.user_id', '=', 1)
+					->where($this->table_usergroups.'.user_id', '=', $this->user['id'])
 					->execute()->as_array('group_id');
 
 				$this->groups = array();
